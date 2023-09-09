@@ -1,0 +1,15 @@
+{
+    "title": {
+      "en": "Welcome to My Landing Page",
+      "fr": "Bienvenue sur ma page d'accueil"
+    },
+    "description": {
+      "en": "This is a sample landing page in English.",
+      "fr": "Ceci est une page d'accueil d'exemple en français."
+    },
+    "buttonText": {
+      "en": "Translate",
+      "fr": "Traduire"
+    }
+    
+}

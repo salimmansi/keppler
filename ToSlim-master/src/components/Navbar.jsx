@@ -2,16 +2,19 @@ import { useState } from "react";
 
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
-
+import translation  from "../utils/translation.json" 
+import { useTranslation } from '../utils/TranslationContext';
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
-
+  // const [language, setLanguage] = useState('en'); // to delete
+  const { language, toggleLanguage, translations } = useTranslation();
   return (
     <nav className="w-full flex py-3 justify-between items-center navbar ">
       <img src={logo} alt="hoobank" className=" mx-8" />
 
       <ul className="list-none sm:flex hidden justify-end items-center m-2 mx-10  flex-1 NavBarbg py-5 pr-10	">
+        <li><button onClick={toggleLanguage}>{translations.buttonText[language]}</button></li>
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
@@ -20,7 +23,7 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <a href={`#${nav.id}`}>{translations.title[language]}</a>
           </li>
         ))}
       </ul>

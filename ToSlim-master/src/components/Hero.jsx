@@ -12,8 +12,11 @@ import {   USAIDLogo,
   eclipse2,
   eclipse3 } from "../assets";
 import GetStarted from "./GetStarted";
+import { useTranslation } from '../utils/TranslationContext';
 
 const Hero = () => {  
+  const { language, toggleLanguage, translations } = useTranslation();
+
   return (
     <section id="home" className={` `}  >
         
@@ -31,7 +34,8 @@ const Hero = () => {
           </h1>  
         </div>
         <p className={`${styles.paragraph} max-w-[570px] mt-5`}>
-          Welcome to Kepler, your gateway to unforgettable travel experiences and exciting events. Our travel agency is passionate about curating the perfect Event package tailored to your interests. 
+        {translations.title[language]}
+          {/* Welcome to Kepler, your gateway to unforgettable travel experiences and exciting events. Our travel agency is passionate about curating the perfect Event package tailored to your interests.  */}
         </p>
       </div>
     </div>
